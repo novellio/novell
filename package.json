@@ -3,17 +3,21 @@
   "name": "novell",
   "scripts": {
     "dev": "vbuild --dev",
-    "build": "vbuild"
+    "build": "vbuild",
+    "play": "vue-play start",
+    "play:build": "vue-play build"
   },
   "devDependencies": {
     "pug": "^2.0.0-beta6",
     "stylus": "^0.54.5",
     "stylus-loader": "^2.3.1",
-    "vbuild": "^4.1.2"
+    "vbuild": "^4.1.2",
+    "vue-play": "^2.1.1",
+    "vue-play-cli": "^1.0.4"
   },
   "dependencies": {
     "element-ui": "^1.0.4",
-    "quill": "^1.1.5",
+    "medium-editor": "^5.22.1",
     "vue-router": "^2.0.3"
   }
 }

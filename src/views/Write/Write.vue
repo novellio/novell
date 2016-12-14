@@ -2,16 +2,21 @@
   .Write
     el-row
       el-col(:span="6")
+        //- Sidebar
         el-menu(theme="dark")
-          el-menu-item-group(title="In Progress")
+          el-menu-item-group(title="Stories")
             el-menu-item(v-for="story in stories", :index="story.id") {{ story.name }}
       el-col(:span="18")
         el-card(:body-style="bodyStyle")
-          Quill
+          h1(class="title")
+            RTE(disableToolbar disableReturn="false" placeholder="Compose your title")
+          RTE
 </template>
 
 <script>
-import Quill from 'components/Quill';
+import RTE from 'components/RTE';
+import Sidebar from 'components/Sidebar';
+
 export default {
   name: 'Write',
   data: () => ({
@@ -30,7 +35,7 @@ export default {
     }
   }),
   components: {
-    Quill
+    RTE
   }
 }
 </script>
