@@ -15,8 +15,6 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-  @import '~styles/colors.styl'
   .App
-    background silver
     height 100%
 </style>

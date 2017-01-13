@@ -1,9 +1,9 @@
 <template lang="pug">
-  el-menu(theme="light" mode="horizontal" router=true, :default-active="route")
+  .MainMenu
     Logo
-    el-menu-item(index="read") Read
-    el-menu-item(index="write") Write
-    el-menu-item(index="review") Review
+    router-link(to="/read") Read
+    router-link(to="/write") Write
+    router-link(to="/review") Review
 </template>
 
 <script>
@@ -21,10 +21,31 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-@import '~styles/fonts.styl'
+  @import '~styles/colors.styl'
+  @import '~styles/fonts.styl'
 
-.el-menu
-  border-radius 0
-.el-menu-item
-  { large-font }
+  .MainMenu
+    background-color extra-light-gray
+    height 60px
+    width 100%
+    display flex
+    align-items center
+
+  a
+    { large-font }
+    padding 18px 18px 14px
+    color extra-light-black
+    text-decoration none
+    border-bottom 5px solid transparent
+    transition border-color .3s, background-color .3s, color .3s
+    &:hover
+      border-bottom 5px solid blue
+
+  .router-link-active
+    color blue
+
+  .el-menu
+    border-radius 0
+  .el-menu-item
+    { large-font }
 </style>

@@ -16,6 +16,7 @@
     "vue-play-cli": "^1.0.4"
   },
   "dependencies": {
+    "bemto.pug": "^2.1.0",
     "element-ui": "^1.0.4",
     "medium-editor": "^5.22.1",
     "vue-router": "^2.0.3"

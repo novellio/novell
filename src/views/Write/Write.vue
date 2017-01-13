@@ -1,48 +1,54 @@
 <template lang="pug">
   .Write
-    el-row
-      el-col(:span="6")
-        //- Sidebar
-        el-menu(theme="dark")
-          el-menu-item-group(title="Stories")
-            el-menu-item(v-for="story in stories", :index="story.id") {{ story.name }}
-      el-col(:span="18")
-        el-card(:body-style="bodyStyle")
-          h1(class="title")
-            RTE(disableToolbar disableReturn="false" placeholder="Compose your title")
-          RTE
+    Sidebar(:fields="fields")
+    .workspace
+      Card
+        h1(class="title")
+          RTE(disableToolbar disableReturn="false" placeholder="Compose your title")
+        RTE
 </template>
 
 <script>
 import RTE from 'components/RTE';
 import Sidebar from 'components/Sidebar';
+import Card from 'components/Card';
 
 export default {
   name: 'Write',
   data: () => ({
-    stories: [
+    fields: [
       {
-        id: 'little-red',
-        name: 'Little Red'
+        title: 'In Progress',
+        items: [
+          'Another test'
+        ]
       },
       {
-        id: 'the-big-bad',
-        name: 'The Big Bad'
+        title: 'Published',
+        items: [
+          `Here's an item`
+        ]
       }
     ],
-    bodyStyle: {
-      height: '100%'
-    }
   }),
   components: {
-    RTE
+    RTE,
+    Card,
+    Sidebar
   }
 }
 </script>
 
 <style lang="stylus" scoped>
-  .Write, .el-row, .el-col, .el-menu, .el-card
+  @import '~styles/colors.styl'
+  .Write
+    display flex
+    background silver
     height 100%
-  .el-card
+  .workspace
+    flex-grow 1
+    display flex
+  .Card
+    flex-grow 1
     margin 10px
 </style>
